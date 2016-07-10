@@ -1,0 +1,48 @@
+<!-- 
+    1.) Реализуйте hover изображений с помощью Javascript.
+    2.) Добавьте второй изображение при помощи JavaScript. При клике на изображение откройте его в полном размере.
+    3.) Выведите в рамзетку альтернативный текст для картинок.
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>Homework_11</title>
+ 	<meta charset="utf-8">
+ </head>
+ <body>
+ 	<img src="image_peppa_small.jpg" id="logo_first" alt="peppa" /><div id="alt_text"></div>
+ 	<br />
+ 	<script type="text/javascript">
+ 		window.addEventListener("load", function (){
+ 			var logoFirst = document.getElementById("logo_first");
+ 			
+ 			// 1.) Реализуйте hover изображений с помощью Javascript.
+ 			logoFirst.addEventListener("mouseover", function(){
+ 				this.src = "image_peppa_big.jpg";
+ 			});
+ 			logoFirst.addEventListener("mouseout", function(){
+ 				this.src = "image_peppa_small.jpg";
+ 			});
+ 			//2.) Добавьте второй изображение при помощи JavaScript. При клике на изображение откройте его в полном размере.
+ 			var next = new Image(200);
+ 			next.src = "kofe.jpg";
+ 			next.alt = "coffe_cup";
+ 			document.body.appendChild(next);
+ 			next.addEventListener("click", function(){
+ 				window.open(next.src, "fotoCoffee", "width=600,height=600,resizable=yes,scrollbars=yes,status=yes");
+
+ 			})
+
+ 			   // 3.) Выведите в рамзетку альтернативный текст для картинок.
+ 			var allImages = document.images;
+ 			var text = "";
+ 			for (var i = 0; i < allImages.length; i++) {
+ 				text = text + allImages[i].alt + "<br />";
+ 				document.getElementById("alt_text").innerHTML = text;
+
+ 			}
+ -->
+ 		})
+ 	</script>
+ </body>
+ </html>
